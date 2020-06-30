@@ -30,4 +30,9 @@ public class JavaApplicationConfiguration implements ApplicationConfiguration {
             return children.iterator().next();
         });
     }
+
+    @Override
+    public Reflections getScanner() {
+        return this.scanner;
+    }
 }
