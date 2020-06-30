@@ -26,7 +26,7 @@ public class TeacherServiceImpl implements TeacherService<Group> {
         teacherResponsibilityService.finishResponsible();
     }
 
-    public void teach(Group group) {
+    private void teach(Group group) {
         System.out.println("Ведет лекцию!!!");
     }
 }

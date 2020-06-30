@@ -1,8 +1,10 @@
 package ua.com.alevel.nix.solid.service.impl;
 
+import ua.com.alevel.nix.solid.annotation.Autowired;
 import ua.com.alevel.nix.solid.annotation.Service;
 import ua.com.alevel.nix.solid.exception.InternetException;
 import ua.com.alevel.nix.solid.service.InternetService;
+import ua.com.alevel.nix.solid.service.TestService;
 
 /**
  * @author Iehor Funtusov, created 26/06/2020 - 9:01 PM
@@ -12,6 +14,9 @@ public class WorkProcessServiceImpl implements InternetService {
 
     private boolean existInternet = true;
     private boolean zoomWorked = true;
+
+    @Autowired
+    private TestService testService;
 
     @Override
     public void isExist() {
@@ -25,5 +30,6 @@ public class WorkProcessServiceImpl implements InternetService {
         } else {
             throw new InternetException("Zoom не работает");
         }
+        testService.test();
     }
 }
